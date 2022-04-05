@@ -1,8 +1,6 @@
 package models
 
-import (
-	"github.com/jtonynet/golang-course-02/db"
-)
+import "github.com/jtonynet/golang-course-02/db"
 
 type Produto struct {
 	Id         int

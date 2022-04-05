@@ -21,6 +21,7 @@
 /Godeps/
 
 go.sum
+*/go.sum
 main
 
 .env
