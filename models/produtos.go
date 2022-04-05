@@ -43,3 +43,15 @@ func BuscaTodosOsProdutos() []Produto {
 	defer database.Close()
 	return produtos
 }
+
+func CriarNovoProduto(nome, descricao string, preco float64, quantidade int) {
+	database := db.ConnectaComBancoDeDados()
+
+	insereDadosNoBanco, err := database.Prepare("insert into produtos(nome, descricao, preco, quantidade) values($1, $2, $3, $4)")
+	if err != nil {
+		panic(err.Error())
+	}
+
+	insereDadosNoBanco.Exec(nome, descricao, preco, quantidade)
+	defer database.Close()
+}
